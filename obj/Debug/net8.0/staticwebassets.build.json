@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "kW31n7hbCnrCJfZvRRghG2tBmMbdsgQ9VndD7+X0Hu4=",
+  "Source": "SampleNetCoreAP",
+  "BasePath": "_content/SampleNetCoreAP",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
