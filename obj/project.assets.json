@@ -1583,6 +1583,21 @@
           }
         }
       },
+      "BusinessAccess/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "DataAccess": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "8.0.10",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.10"
+        },
+        "compile": {
+          "bin/placeholder/BusinessAccess.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BusinessAccess.dll": {}
+        }
+      },
       "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
@@ -4461,6 +4476,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "BusinessAccess/1.0.0": {
+      "type": "project",
+      "path": "../BusinessAccess/BusinessAccess.csproj",
+      "msbuildProject": "../BusinessAccess/BusinessAccess.csproj"
+    },
     "DataAccess/1.0.0": {
       "type": "project",
       "path": "../DataAccess/DataAccess.csproj",
@@ -4469,6 +4489,7 @@
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "BusinessAccess >= 1.0.0",
       "DataAccess >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 8.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.10",
@@ -4503,6 +4524,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "D:\\GitHub\\SampleNetCoreAP\\BusinessAccess\\BusinessAccess.csproj": {
+              "projectPath": "D:\\GitHub\\SampleNetCoreAP\\BusinessAccess\\BusinessAccess.csproj"
+            },
             "D:\\GitHub\\SampleNetCoreAP\\DataAccess\\DataAccess.csproj": {
               "projectPath": "D:\\GitHub\\SampleNetCoreAP\\DataAccess\\DataAccess.csproj"
             }

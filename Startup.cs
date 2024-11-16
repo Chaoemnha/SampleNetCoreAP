@@ -1,5 +1,7 @@
 ﻿using DataAccess.Models;
+using Microsoft.AspNetCore.DataProtection.Repositories;
 using Microsoft.EntityFrameworkCore;
+using BusinessAccess;
 
 namespace SampleNetCoreAPI
 {
@@ -21,6 +23,11 @@ namespace SampleNetCoreAPI
             services.AddDbContext<SamplnetcoredbContext>(options =>
               options.UseSqlServer(sqlConnectionString)
           );
+            //đăng ký nó vào Dependency Injection: có nghĩa cứ interface IRepository sẽ được implement ở
+            //Repository
+            #region Add Repository
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            #endregion
             services.AddControllersWithViews(option => option.EnableEndpointRouting = false);
             services.AddMvc();
         }
