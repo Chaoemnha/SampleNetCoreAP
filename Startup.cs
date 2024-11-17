@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.DataProtection.Repositories;
 using Microsoft.EntityFrameworkCore;
 using BusinessAccess;
+using DataAccess.ConfigurationManager;
+using Microsoft.Extensions.Configuration;
 
 namespace SampleNetCoreAPI
 {
@@ -12,6 +14,25 @@ namespace SampleNetCoreAPI
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+        }
+        public Startup(IWebHostEnvironment environment)
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Environment.CurrentDirectory)
+                .AddJsonFile("appsettings.json");
+            //khởi tạo Configuration từ file appSettings.json với mục đích là get ConnectionString
+            var connectionStringConfig = builder.Build();
+            //Add config from database
+            //SD Configuration trên lấy connectionstring
+            //và xuống DB get data lên -> add vào Configuration của API
+            var config = new ConfigurationBuilder()
+                .SetBasePath(environment.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables()
+                .AddEntityFrameworkConfig(options =>
+                options.UseSqlServer(connectionStringConfig.GetConnectionString("SQLConnection")));
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -28,6 +49,10 @@ namespace SampleNetCoreAPI
             #region Add Repository
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             #endregion
+            #region Add Configuration to dependency injection
+            services.AddSingleton<IConfiguration>(Configuration);
+            #endregion
+            //Đang làm
             services.AddControllersWithViews(option => option.EnableEndpointRouting = false);
             services.AddMvc();
         }
