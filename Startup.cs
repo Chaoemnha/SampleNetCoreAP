@@ -1,9 +1,9 @@
 ﻿using DataAccess.Models;
 using Microsoft.AspNetCore.DataProtection.Repositories;
 using Microsoft.EntityFrameworkCore;
-using BusinessAccess;
 using DataAccess.ConfigurationManager;
 using Microsoft.Extensions.Configuration;
+using BusinessAccess.Repository;
 
 namespace SampleNetCoreAPI
 {
@@ -31,7 +31,7 @@ namespace SampleNetCoreAPI
                 .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: true)
                 .AddEnvironmentVariables()
                 .AddEntityFrameworkConfig(options =>
-                options.UseSqlServer(connectionStringConfig.GetConnectionString("SQLConnection")));
+                options.UseSqlServer(connectionStringConfig.GetConnectionString("SQLServerConnection")));
             Configuration = builder.Build();
         }
 
@@ -40,7 +40,7 @@ namespace SampleNetCoreAPI
         // Phương thức này được gọi bởi runtime. Sử dụng phương thức này để thêm service vào container.
         public void ConfigureServices(IServiceCollection services)
         {
-            var sqlConnectionString = Configuration.GetConnectionString("SQLServerConnection") + ";TrustServerCertificate=true";
+            var sqlConnectionString = Configuration.GetConnectionString("SQLServerConnection");
             services.AddDbContext<SamplnetcoredbContext>(options =>
               options.UseSqlServer(sqlConnectionString)
           );

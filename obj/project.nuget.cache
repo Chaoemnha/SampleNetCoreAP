@@ -1,12 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "2iC45T0f4ihMvrOJaIQ5ivkV8d9/ueoqD4Ziihxy2UpnW+GULQ4/W46AIOamWEtAdiOoFMmdZFpIeqzyGkuW9Q==",
+  "dgSpecHash": "Kj4+z38rDkrLCn0gk6RrmBaG7ecseHddRwPdBGf+7qOqWTQM5Nl0cP4+ctffecmfYoZI+EbQTiD4JIg4Y9VDOw==",
   "success": true,
   "projectFilePath": "D:\\GitHub\\SampleNetCoreAP\\SampleNetCoreAP\\SampleNetCoreAP.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\thanh\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\thanh\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\thanh\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
     "C:\\Users\\thanh\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\thanh\\.nuget\\packages\\log4net\\3.0.3\\log4net.3.0.3.nupkg.sha512",
     "C:\\Users\\thanh\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\thanh\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\thanh\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",
