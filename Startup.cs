@@ -25,13 +25,13 @@ namespace SampleNetCoreAPI
             //Add config from database
             //SD Configuration trên lấy connectionstring
             //và xuống DB get data lên -> add vào Configuration của API
-            var config = new ConfigurationBuilder()
-                .SetBasePath(environment.ContentRootPath)
-                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-                .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: true)
-                .AddEnvironmentVariables()
-                .AddEntityFrameworkConfig(options =>
-                options.UseSqlServer(connectionStringConfig.GetConnectionString("SQLServerConnection")));
+            //var config = new ConfigurationBuilder()
+            //    .SetBasePath(environment.ContentRootPath)
+            //    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+            //    .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: true)
+            //    .AddEnvironmentVariables()
+            //    .AddEntityFrameworkConfig(options =>
+            //    options.UseSqlServer(connectionStringConfig.GetConnectionString("SQLServerConnection")));
             Configuration = builder.Build();
         }
 
@@ -64,7 +64,12 @@ namespace SampleNetCoreAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller=Blog}/{action=Index}/{id?}"); // BlogController.Index là route mặc định
+            });
         }
     }
 }

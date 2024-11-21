@@ -145,3 +145,7 @@ D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\obj\Debug\net8.0\ref\SampleNetCoreAP.d
 D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\obj\Debug\net8.0\SampleNetCoreAP.sourcelink.json
 D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\BusinessAccess.dll
 D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\BusinessAccess.pdb
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\AutoMapper.dll
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\log4net.dll
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\obj\Debug\net8.0\SampleNetCoreAP.RazorAssemblyInfo.cache
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\obj\Debug\net8.0\SampleNetCoreAP.RazorAssemblyInfo.cs
