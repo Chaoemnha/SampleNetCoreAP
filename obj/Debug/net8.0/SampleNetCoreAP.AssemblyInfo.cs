@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SampleNetCoreAP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a57227b2f44acd8f64365e9a31d09abe4e4435f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("SampleNetCoreAP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SampleNetCoreAP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

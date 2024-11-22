@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleNetCoreAP", "SampleNetCoreAP.csproj", "{7984C03C-C45A-4610-A55C-F8AA0C2DCF5F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SampleNetCoreAP", "SampleNetCoreAP.csproj", "{7984C03C-C45A-4610-A55C-F8AA0C2DCF5F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "..\DataAccess\DataAccess.csproj", "{7520A1E8-5C3D-4F0D-B754-5F6C37017B04}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "..\DataAccess\DataAccess.csproj", "{7520A1E8-5C3D-4F0D-B754-5F6C37017B04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessAccess", "..\BusinessAccess\BusinessAccess.csproj", "{F0A7157C-E047-486C-921D-A1FB31A369CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BusinessAccess", "..\BusinessAccess\BusinessAccess.csproj", "{F0A7157C-E047-486C-921D-A1FB31A369CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

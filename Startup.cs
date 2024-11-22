@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore;
 using DataAccess.ConfigurationManager;
 using Microsoft.Extensions.Configuration;
 using BusinessAccess.Repository;
+using Microsoft.OpenApi.Models;
 
 namespace SampleNetCoreAPI
 {
@@ -25,13 +26,13 @@ namespace SampleNetCoreAPI
             //Add config from database
             //SD Configuration trên lấy connectionstring
             //và xuống DB get data lên -> add vào Configuration của API
-            //var config = new ConfigurationBuilder()
-            //    .SetBasePath(environment.ContentRootPath)
-            //    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
-            //    .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: true)
-            //    .AddEnvironmentVariables()
-            //    .AddEntityFrameworkConfig(options =>
-            //    options.UseSqlServer(connectionStringConfig.GetConnectionString("SQLServerConnection")));
+            var config = new ConfigurationBuilder()
+                .SetBasePath(environment.ContentRootPath)
+                .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{environment.EnvironmentName}.json", optional: true)
+                .AddEnvironmentVariables()
+                .AddEntityFrameworkConfig(options =>
+                options.UseSqlServer(connectionStringConfig.GetConnectionString("SQLServerConnection")));
             Configuration = builder.Build();
         }
 
@@ -52,9 +53,12 @@ namespace SampleNetCoreAPI
             #region Add Configuration to dependency injection
             services.AddSingleton<IConfiguration>(Configuration);
             #endregion
-            //Đang làm
             services.AddControllersWithViews(option => option.EnableEndpointRouting = false);
             services.AddMvc();
+            services.AddSwaggerGen(c => 
+            { 
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" }); 
+            });
         }
 
         // Phương thức này được gọi bởi runtime. Sử dụng phương thức này để cấu hình đường ống yêu cầu (request pipeline) HTTP.
@@ -63,13 +67,13 @@ namespace SampleNetCoreAPI
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample API v1");
+                });
             }
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Blog}/{action=Index}/{id?}"); // BlogController.Index là route mặc định
-            });
+            app.UseMvc();
         }
     }
 }

@@ -1,6 +1,6 @@
 @SampleNetCoreAP_HostAddress = http://localhost:5053
 
-GET {{SampleNetCoreAP_HostAddress}}/weatherforecast/
+GET {{SampleNetCoreAP_HostAddress}}/blog/
 Accept: application/json
 
 ###
