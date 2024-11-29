@@ -5,6 +5,7 @@ using DataAccess.ConfigurationManager;
 using Microsoft.Extensions.Configuration;
 using BusinessAccess.Repository;
 using Microsoft.OpenApi.Models;
+using BusinessAccess.Service;
 
 namespace SampleNetCoreAPI
 {
@@ -49,6 +50,9 @@ namespace SampleNetCoreAPI
             //Repository
             #region Add Repository
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            #endregion
+            #region Add Service
+            services.AddScoped(typeof(IBlogService), typeof(BlogService));
             #endregion
             #region Add Configuration to dependency injection
             services.AddSingleton<IConfiguration>(Configuration);

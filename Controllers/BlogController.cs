@@ -1,5 +1,9 @@
 using Microsoft.AspNetCore.Mvc;
 using DataAccess.Models;
+using BusinessAccess.Service;
+using BusinessAccess.DataContract;
+using BusinessAccess.Repository;
+using AutoMapper;
 
 namespace SampleNetCoreAP.Controllers
 {
@@ -7,21 +11,26 @@ namespace SampleNetCoreAP.Controllers
     [Route("[controller]")]
     public class BlogController : ControllerBase
     {
-        [HttpGet]
-        public IEnumerable<Blog> Get()
+        private readonly IBlogService _blogService;
+        public BlogController(IBlogService blogService)
         {
-            return GetBlogs();
+            _blogService = blogService;
+        }
+        [HttpGet]
+        public List<Blog> Get()
+        {
+            return _blogService.getAllBlogs();
         }
         [HttpGet("{BlogId}", Name = "Get")]
         public Blog Get(int id)
         {
-            return GetBlogs().Find(e => e.Id == id);
+            return _blogService.getBlogById(id);
         }
         [HttpPost]
         [Produces("application/json")]
         public Blog Post([FromBody] Blog blog)
         {
-            return new Blog();
+            return _blogService.addABlog(blog); //Dang lam
         }
         [HttpPut("{BlogId}")]
         public void Put(int BlogId, [FromBody] Blog Blog)
