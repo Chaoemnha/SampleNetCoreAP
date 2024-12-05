@@ -52,7 +52,7 @@ namespace SampleNetCoreAPI
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             #endregion
             #region Add Service
-            services.AddScoped(typeof(IBlogService), typeof(BlogService));
+            services.AddScoped(typeof(Service<>), typeof(Service<>));
             #endregion
             #region Add Configuration to dependency injection
             services.AddSingleton<IConfiguration>(Configuration);

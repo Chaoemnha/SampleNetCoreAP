@@ -11,50 +11,36 @@ namespace SampleNetCoreAP.Controllers
     [Route("[controller]")]
     public class BlogController : ControllerBase
     {
-        private readonly IBlogService _blogService;
-        public BlogController(IBlogService blogService)
+        private readonly Service<Blog> _blogService;
+        public BlogController(Service<Blog> blogService)
         {
             _blogService = blogService;
         }
         [HttpGet]
         public List<Blog> Get()
         {
-            return _blogService.getAllBlogs();
+            return _blogService.GetAll();
         }
         [HttpGet("{BlogId}", Name = "Get")]
         public Blog Get(int id)
         {
-            return _blogService.getBlogById(id);
+            return _blogService.GetById(id);
         }
-        [HttpPost]
-        [Produces("application/json")]
-        public Blog Post([FromBody] Blog blog)
+        //[HttpPost]
+        //[Produces("application/json")]
+        //public Blog Post([FromBody] Blog blog)
+        //{
+        //    return _blogService.addABlog(blog); //Dang lam
+        //}
+        [HttpPut]
+        public void Put([FromBody] Blog Blog)
         {
-            return _blogService.addABlog(blog); //Dang lam
-        }
-        [HttpPut("{BlogId}")]
-        public void Put(int BlogId, [FromBody] Blog Blog)
-        {
-            //
+            _blogService.Add(Blog);
         }
         [HttpDelete("{BlogId}")]
         public void Delete(int id)
         {
-        }
-        private List<Blog> GetBlogs()
-        {
-            return new List<Blog>()
-            {
-                new Blog()
-                {
-                    Id = 1,
-                    Active = true,
-                    CreatedTime = DateTime.Now,
-                    UpdatedTime = DateTime.Now,
-                    Name = "Test",
-                    Posts = new List<Post>()
-                },
-            };
+            _blogService.DeleteById(id);
         }
     }
 }

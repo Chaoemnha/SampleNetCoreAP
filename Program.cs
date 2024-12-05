@@ -15,12 +15,19 @@ builder.Services.AddDbContext<SamplnetcoredbContext>(options =>
     options.UseSqlServer("server=DESKTOP-9JF35G9\\SQLEXPRESS;user=sa;password=123123123123;database=samplnetcoredb;TrustServerCertificate=true")
 ) ;
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
-builder.Services.AddScoped(typeof(IBlogService), typeof(BlogService));
+builder.Services.AddScoped(typeof(Service<>), typeof(Service<>));
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API" , Version = "v1"});
+});
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy => policy.WithOrigins("http://localhost:5173")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
 });
 
 var app = builder.Build();
@@ -38,6 +45,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseCors("AllowFrontend");
 
 app.MapControllers();
 

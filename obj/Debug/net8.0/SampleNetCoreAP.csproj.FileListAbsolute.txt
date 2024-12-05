@@ -266,3 +266,7 @@ D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\obj\Debug\net8.0\refint\SampleNetCoreA
 D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\obj\Debug\net8.0\SampleNetCoreAP.pdb
 D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\obj\Debug\net8.0\SampleNetCoreAP.genruntimeconfig.cache
 D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\obj\Debug\net8.0\ref\SampleNetCoreAP.dll
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\netcore-api\.prettierrc.json
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\netcore-api\jsconfig.json
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\netcore-api\package-lock.json
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\netcore-api\package.json
