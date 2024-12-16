@@ -270,3 +270,12 @@ D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\netcore-api\.prettier
 D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\netcore-api\jsconfig.json
 D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\netcore-api\package-lock.json
 D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\netcore-api\package.json
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\SampleNetCoreAP.staticwebassets.runtime.json
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Forms.dll
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.dll
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\Microsoft.AspNetCore.Components.QuickGrid.EntityFrameworkAdapter.dll
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\Microsoft.AspNetCore.Components.Web.dll
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+D:\GitHub\SampleNetCoreAP\SampleNetCoreAP\bin\Debug\net8.0\Microsoft.JSInterop.dll

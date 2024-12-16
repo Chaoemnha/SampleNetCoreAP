@@ -61,7 +61,7 @@ namespace SampleNetCoreAPI
             services.AddMvc();
             services.AddSwaggerGen(c => 
             { 
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" }); 
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "A .NET Core API backend", Version = "v1216" }); 
             });
         }
 
@@ -74,7 +74,7 @@ namespace SampleNetCoreAPI
                 app.UseSwagger();
                 app.UseSwaggerUI(c =>
                 {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Sample API v1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Backend API v1216");
                 });
             }
             app.UseMvc();

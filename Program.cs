@@ -20,7 +20,7 @@ builder.Services.AddScoped(typeof(Service<>), typeof(Service<>));
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
-    c.SwaggerDoc("v1", new OpenApiInfo { Title = "My API" , Version = "v1"});
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "A .NET Core API backend", Version = "v1216", Description = "Blog management with EF6 code first, Responsitory Design Pattern"});
 });
 builder.Services.AddCors(options =>
 {
@@ -38,7 +38,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI(c =>
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My backend API V1216");
     });
 }
 
